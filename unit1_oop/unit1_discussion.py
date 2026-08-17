@@ -25,7 +25,15 @@ from copy import copy, deepcopy
 # Replace the pass statement with your implementation.
 
 class ParentClass:
-    pass
+    category = "Person"
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display_info(self):
+        return f"Name: {self.name}, Age: {self.age}, Category: {self.category}"
+
 
 
 # TODO 2:
@@ -41,7 +49,28 @@ class ParentClass:
 # Replace the pass statement with your implementation.
 
 class ChildClass(ParentClass):
-    pass
+    role = "Student"
+
+    def __init__(self, name, age, student_id, major):
+        super().__init__(name, age)
+        self.student_id = student_id
+        self.major = major
+
+    def display_info(self):
+        return (
+            f"Name: {self.name}, Age: {self.age}, Category: {self.category}, "
+            f"Student ID: {self.student_id}, Major: {self.major}, Role: {self.role}"
+        )
+
+    def study(self):
+        return f"{self.name} is studying {self.major}."
+
+    #6
+
+    def change_major(self, new_major):
+        self.major = new_major
+        return f"{self.name} changed their major to {self.major}."
+
 
 
 # TODO 3:
@@ -57,7 +86,20 @@ class ChildClass(ParentClass):
 
 def demonstrate_namespaces():
     print("\n=== Namespace Demonstration ===")
-    print("TODO: Implement namespace demonstration")
+
+
+    student1 = ChildClass("Taylor Swift", 35, "S001", "Cloud Computing")
+    student2 = ChildClass("Selena Gomez", 33, "S002", "Cybersecurity")
+
+    print("Class variable through class: ", ChildClass.role)
+    print("Class variable through object: ", student1.role)
+
+    student1.graduation_year = 2028
+
+    print("Student 1 namespace: ", student1.__dict__)
+    print("Student 2 namespace: ", student2.__dict__)
+
+    print("Child class namespace: ", ChildClass.__dict__)
 
 
 # TODO 4:
@@ -73,7 +115,21 @@ def demonstrate_namespaces():
 
 def demonstrate_copying():
     print("\n=== Copy Demonstration ===")
-    print("TODO: Implement shallow copy and deep copy demonstration")
+
+
+    original = ChildClass("Ariana Grande", 33, "S003", "Computer Science")
+    original.courses = ["Data Structures and Analysis", "Software Engineering Principles and Techniques"]
+
+    # In a shallow copy, the new list is initialized so that its contents are precisely the same as the original sequence.
+    shallow_copy = copy(original)
+
+    # In a deep copy, the new copy references its own copies of the objects referenced by the original version.
+    deep_copy = deepcopy(original)
+    original.courses.append("Advanced Programming Languages")
+
+    print("Original courses: ", original.courses)
+    print("Shallow copy courses: ", shallow_copy.courses)
+    print("Deep copy courses: ", deep_copy.courses)
 
 
 # TODO 5:
@@ -89,12 +145,21 @@ def demonstrate_copying():
 def main():
     print("=== Unit 1 OOP Assignment ===")
 
-    print("\nTODO: Create and test your parent object")
+    parent = ParentClass("Britney Spears", 44)
+    print(parent.display_info())
 
-    print("\nTODO: Create and test your child object")
+    student = ChildClass("Taylor Swift", 35, "S001", "Cloud Computing")
+    print(student.display_info())
+    print(student.study())
+
+    print(student.change_major("Computer Science"))
+    print(student.display_info())
+
 
     demonstrate_namespaces()
     demonstrate_copying()
+
+
 
 
 if __name__ == "__main__":

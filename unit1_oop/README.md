@@ -33,3 +33,17 @@ Your reflection should be approximately 150–200 words and address the followin
 2. What challenges did you encounter, and how did you overcome them?
 3. Compare OOP to procedural programming.
 4. Discuss the benefits of maintainability and reusability and apply this managing overhead, practical application development, and future use.
+
+
+## Readme
+- created a parent class named parent class with the class variable category set to person and instance variables name and age.
+- created the display_info() method to return the person's name, age, and category.
+- created a child class named childclass that inherited from parent class.
+- added the variable role which was set to student and the instance variables student_id and major.
+- overrode the display_info() method and created the study() method. 
+- created objects for Taylor Swift and Selena Gomez to demonstrate class and instance namespaces.
+- added graduation_year = 2028 to the Taylor Swift object and used __dict__ to display the object and class namespaces.
+- created an Ariana Grande object with a course list to demonstrate shallow and deep copying.
+- added Advanced Programming Languages to the original course list for the shallow copy to show a change and the deep copy to remain unchanged.
+- created a Britney Spears parent class object and a Taylor Swift child class object in main().
+- added the change_major() method to change Taylor Swift's major from cloud computing to computer science. 
