@@ -190,7 +190,7 @@ print("      testing front on an empty queue,")
 print("      and verifying a single-item queue is empty after removal.")
 
 # Demonstrate FIFO behavior.
-print(\nDemonstrating FIFO behavior: ")
+print("\nDemonstrating FIFO behavior: ")
 print("Checked out: ", checkout_queue.dequeue())
 print("Checked out: ", checkout_queue.dequeue())
 print("Checked out: ", checkout_queue.dequeue())
