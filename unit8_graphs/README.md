@@ -31,3 +31,8 @@ Your reflection should be approximately 150–200 words and address the followin
 2. What challenges did you encounter, and how did you overcome them?
 3. Compare BFS and DFS conceptually and describe real-world applications and use cases.
 
+While completing this assignment, I learned how graphs can be represented using an adjacency lists and how BFS can be used to move through a graph. I also learned how a queue is used to keep track of which node should be visited and how a 
+visited set prevents the same node from being visited more than once. BFS also helped me understand how nodes are visited level by level based on their connections.
+One challenge I encountered was understanding how the queue manages the traversal order. I overcame this by going through the BFS traversal and seeing how the neighbors are added to the queue and visited level by level. 
+BFS visits nearby nodes first and moves through the graph level by level while DFS follows one path deeper before moving to another path. In my classroom graph, BFS could be used to visit the classrooms with direct hallway connections first
+before moving farther away. DFS could be used when following one hallway path through the classrooms before going back and following another path.
